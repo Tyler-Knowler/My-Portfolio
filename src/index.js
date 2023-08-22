@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import Nav from './Nav';
-import AboutMe from './AboutMe';
+import Main from './Main';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Nav />
-    <AboutMe />
+    <Main />
   </React.StrictMode>
 );
 
