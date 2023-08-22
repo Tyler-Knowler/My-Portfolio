@@ -1,0 +1,24 @@
+.about-me {
+    background-color: rgba(13, 75, 69, 0.5);
+    float: right;
+    width: 60%;
+
+
+    text-align: center;
+    padding: 25px;
+}
+.grid-2{
+
+    display: grid;
+    grid-template-columns: .5fr 5fr;
+    align-items: center;
+  
+    list-style: none;
+    padding: 30px;
+  }
+.about-me h1{
+    line-height: 32px;
+    margin: 10px;
+    writing-mode: vertical-rl;
+    transform: rotate(-180deg);
+}
