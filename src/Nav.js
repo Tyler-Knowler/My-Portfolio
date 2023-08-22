@@ -1,8 +1,20 @@
+import React, { useState } from 'react'
 import signature from './signature.png';
 import './CSSNav.css';
 
-function Nav() {
+const Nav = () => {
+  const [colorChange, setColorchange] = useState(false);
+  const changeNavbarColor = () => {
+      if (window.scrollY >= 950) {
+          setColorchange(true);
+      }
+      else {
+          setColorchange(false);
+      }
+  };
+  window.addEventListener('scroll', changeNavbarColor);
   return (
+    <div className={colorChange ? 'navBar-full colorChange' : 'navBar-full'}>
       <div className='navBar'>
         <div className='grid'>
           <div className='logo navLeft'><a href='/'><img src={signature} className='logo' alt='logo'></img></a></div>
@@ -13,6 +25,7 @@ function Nav() {
           <a href='#contact' className='navRight'>Contact</a>
         </div>
       </div>
+    </div>
   );
 }
 

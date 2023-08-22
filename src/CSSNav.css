@@ -6,25 +6,33 @@ body {
   background-color: rgb(12, 65, 60);
   overflow: auto;
 }
+.colorChange {
+  background-color: rgba(12, 65, 60, .95);
+  border-bottom: 4px solid black;
 
+  transition: all .2s;
+}
+.navBar-full {
+  position: sticky;
+  top: 0;
+  width: 100%;
+
+  z-index: 99;
+}
 .navBar {
   display: block;
-
-  max-width: 90rem;
 
   margin-left: auto;
   margin-right: auto;
 
-  font-size: 20px;
 }
 .grid{
 
   display: grid;
-  grid-template-columns: repeat(3,minmax(0,1fr));
+  grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
 
   list-style: none;
-  padding: 30px;
 }
 .grid a{
   text-decoration: none;
@@ -44,6 +52,45 @@ body {
   display: flex;
   justify-content: right;
 }
-.logo {
-  height: 25px;
+
+
+
+@media (min-width: 576px) {
+  .navBar {
+    font-size: 20px;
+    max-width: 100%;
+  }
+  .grid{
+    padding: 10px;
+  }
+  .logo {
+    height: 30px;
+  }
+  
+}
+
+@media (min-width: 768px) { 
+  .navBar {
+    font-size: 20px;
+    max-width: 90rem;
+  }
+  .grid{
+    padding: 20px;
+  }
+  .logo {
+    height: 35px;
+  }
+
+ }
+
+@media (min-width: 992px) {
+  .grid{
+    padding: 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 1400px) {
 }

@@ -1,13 +1,15 @@
 import './CSSMain.css';
+import placeholder from './placeholder.jpg';
 
 function Main() {
   return (
     <div className='main-div'>
       <section className='initialSection'>
-        <div>This is some text :)</div>
+        <div>Welcome!<br></br>Come take a look around</div>
       </section>
       <section id='about'>
-        <div className='about-me'>
+        <div className='about-me-image-div'><img src={placeholder} className='about-me-image' alt='logo'></img></div>
+        <div className='about-me-text'>
           <div className='grid-2'>
               <h1>About Me</h1>
               <span><p>I'm Tyler, a beginner in Web Development, trying to figure out how this stuff works :)</p>
@@ -18,21 +20,30 @@ function Main() {
         </div>
       </section>
       <section id='projects'>
-      <div className='my-projects-text'>
+        <div className='my-projects-text'>
           <div>
             <h1>My Projects</h1>
             <p>Here is a list of some projects which I have made as well as the most recent version of all of them.</p>
           </div>
         </div>
         <div className='my-projects-boxes'>
-          <div className='project-box'>Example 1</div>
-          <div className='project-box'>Example 2</div>
-          <div className='project-box'>Example 3</div>
-          <div className='project-box'>Example 4</div>
-          <div className='project-box'>Example 5</div>
+          <div className='project-box example1'>Example 1</div>
+          <div className='project-box example2'>Example 2</div>
+          <div className='project-box example3'>Example 3</div>
+          <div className='project-box example4'>Example 4</div>
+          <div className='project-box example5'>Example 5</div>
         </div>
       </section>
-      <section id='contact'></section>
+      <section id='contact'>
+        <div className='contact-me-text'>
+          <div>
+            <h1>Contact Me</h1>
+            <p>Feel free to send me a message with any questions and I'll get back to you as soon as I can.</p>
+          </div>
+        </div>
+        <div className='contact-form-container'>
+        </div>
+      </section>
     </div>
   );
 }
