@@ -9,6 +9,10 @@
 
     z-index: 9;
 }
+
+
+
+
 #about {
     position: relative;
     z-index: 10;
@@ -32,14 +36,17 @@
 }
 
 
+
+
 #projects {
     position: relative;
     z-index: 10;
     background-color: rgb(12, 65, 60);
-    width: 100%;
+    width: 90%;
     height: 550px;
 
     text-align: center;
+    padding: 0% 5%;
 }
 #projects h1 {
     padding: 25px 0 0 0;
@@ -63,27 +70,60 @@
     color: white;
     outline: 5px solid black;
     box-shadow: 5px 5px 10px 7px rgba(0, 56, 46, 1);
-    
 }
+
+
 
 
 #contact {
     position: relative;
     z-index: 10;
     background-color: rgba(13, 75, 69, 1);
-    width: 100%;
+    width: 90%;
     height: 500px;
-    overflow: hidden;
-
     text-align: center;
+    padding: 0% 5%;
 }
+.contact-me-text {
+    padding-top: 10px;
+}
+.contact-form {
+    display: grid;
+    grid-template-rows: .5fr;
+    width: 60%;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: left;
+}
+.contact-form input, textarea {
+    border: none;
+    border-bottom: 2px solid black;
+    background-color: transparent;
+    box-shadow: 2px 2px 5px 1px rgba(0, 56, 46, .5);
+    height: 25px;
+    font-size: 13.25px;
+}
+.contact-form input:focus, textarea:focus {
+    outline: none;
+}
+.contact-form textarea {
+    font: inherit;
+    resize: none;
+    height: 100px;
+    font-size: 13.25px;
+}
+.contact-form button {
+    width: 200px;
+    height: 25px;
+}
+
+
 
 
 ::-webkit-scrollbar {
     width: 12px;
     height: 10px;
-    background-color: rgb(31, 31, 31);
-    background-clip: content-box;
 }
 ::-webkit-scrollbar-thumb {
     background-color: rgb(31, 31, 31);
@@ -94,7 +134,44 @@
 ::-webkit-scrollbar-track {
     background-color: rgb(80, 80, 80);
 }
+.my-projects-boxes::-webkit-scrollbar-track {
+    background-color: transparent;
+}
 
+
+
+
+
+@media (max-width: 575px) { 
+    .initialSection {
+        margin: 5% 10% 50% 10%;
+        top: 40%;
+
+        height: 650px;
+    }
+    .initialSection div {
+        font-size: 30px;
+    }
+    #about {
+        height: auto;
+        padding: 0px 0px 20px 0px;
+    }
+    .grid-2 {        
+        margin: 20px;
+    }
+    .my-projects-boxes {
+        width: 100%;
+    }
+    .project-box {
+        margin: 50px 15px 25px 15px;
+    }
+    #contact {
+        height: 625px;
+    }
+    .contact-form input, textarea {
+        margin: 15px 0px 40px 0px;
+    }
+}
 
 @media (min-width: 576px) { 
     .initialSection {
@@ -113,17 +190,32 @@
     .grid-2 {        
         margin: 20px;
     }
-
     .my-projects-boxes {
-        width: 75%;
-        margin: 0% 5%;
-        width: 90%;
+        width: 100%;
     }
+    .project-box {
+        margin: 50px 15px 25px 15px;
+    }
+    #contact {
+        height: 650px;
+    }
+    .contact-form input, textarea {
+        margin: 15px 0px 40px 0px;
+    }
+}
+
+@media (min-width: 620px) {
     .project-box {
         margin: 50px 25px 25px 25px;
     }
 }
 
+@media (max-width: 655px) {
+    .contact-form button {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
 @media (min-width: 768px) {
     .initialSection {
         margin: 12.5% 10% 27.5% 10%;
@@ -131,8 +223,12 @@
     .initialSection div {
         font-size: 50px;
     }
-    .project-box {
-        margin: 50px 40px 25px 40px;
+    .contact-form button {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .contact-form input, textarea {
+        margin: 5px 0px 30px 0px;
     }
 }
 
@@ -161,9 +257,6 @@
         margin: 10px;
         writing-mode: vertical-rl;
         transform: rotate(-180deg);
-    }
-    .project-box {
-        margin: 50px 20px 25px 20px;
     }
 }
 
