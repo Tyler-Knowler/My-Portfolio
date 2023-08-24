@@ -2,6 +2,7 @@ import './CSSMain.css';
 import placeholder from './placeholder.jpg';
 
 function Main() {
+
   return (
     <div className='main-div'>
       <section className='initialSection'>
@@ -27,11 +28,14 @@ function Main() {
           </div>
         </div>
         <div className='my-projects-boxes'>
-          <div className='project-box example1'>Example 1</div>
-          <div className='project-box example2'>Example 2</div>
-          <div className='project-box example3'>Example 3</div>
-          <div className='project-box example4'>Example 4</div>
-          <div className='project-box example5'>Example 5</div>
+          <div className='project-box'>Example 1</div>
+          <div className='project-box'>Example 2</div>
+          <div className='project-box'>Example 3</div>
+          <div className='project-box'>Example 4</div>
+          <div className='project-box'>Example 5</div>
+          <div className='project-box'>Example 6</div>
+          <div className='project-box'>Example 7</div>
+          <div className='project-box'>Example 8</div>
         </div>
       </section>
       <section id='contact'>
@@ -42,6 +46,15 @@ function Main() {
           </div>
         </div>
         <div className='contact-form-container'>
+          <form className='contact-form'>
+            Name
+            <input type="text" />
+            Email
+            <input type="email" />
+            Message
+            <textarea />
+            <button type="submit">Send Message</button>
+          </form>
         </div>
       </section>
     </div>
