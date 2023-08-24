@@ -1,13 +1,5 @@
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: #50858B;
-  overflow: auto;
-}
 .colorChange {
-  background-color: #50858B;
+  background-color: #083d41;
   opacity: .8;
 
   transition: all .2s;
@@ -35,7 +27,7 @@ body {
   text-decoration: none;
   text-align: center;
   
-  color: black;
+  color: white;
 }
 .navBar a:hover, img:hover{
   cursor: pointer;

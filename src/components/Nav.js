@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import signature from '../signature.png';
+import signature from '../signature-white.png';
 import '../CSSNav.css';
 
 const Nav = () => {

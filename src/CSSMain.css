@@ -16,7 +16,7 @@
 #about {
     position: relative;
     z-index: 10;
-    background-color: #62A8AC;
+    background-color: #021f22;
     width: 100%;
     height: 500px;
 
@@ -46,7 +46,7 @@
 #projects {
     position: relative;
     z-index: 10;
-    background-color: #62A8AC;
+    background-color: #021f22;
     width: 90%;
     height: 550px;
 
@@ -73,7 +73,7 @@
     width: 225px;
     height: 300px;
     color: white;
-    box-shadow: 2px 2px 5px 3px #4b888b;
+    box-shadow: 2px 2px 5px 3px #010f11;
     transition: scale .5s;
 }
 .project-box:hover {
@@ -82,15 +82,19 @@
 
 
 
-
+.contact-transition {
+    position: absolute;
+    left: 0;
+    top: -50px;
+}
 #contact {
     position: relative;
     z-index: 10;
-    background-color: #62A8AC;
+    background-color: #083d41;
     width: 90%;
     height: 500px;
     text-align: center;
-    padding: 0% 5%;
+    padding: 10% 5%;
 }
 .contact-me-text {
     padding-top: 10px;
@@ -106,9 +110,9 @@
 }
 .contact-form input, textarea {
     border: none;
-    border-bottom: 2px solid black;
+    color: rgb(211, 211, 211);
+    border-bottom: 2px solid white;
     background-color: transparent;
-    box-shadow: 2px 2px 5px 1px #4b888b;
     height: 25px;
     font-size: 13.25px;
 }
@@ -123,12 +127,12 @@
 }
 .contact-form button {
     width: 200px;
-    height: 25px;
-    box-shadow: 2px 2px 5px 1px #4b888b;
+    height: 40px;
+    color: white;
+    box-shadow: 2px 2px 5px 1px #010f11;
     
     border: none;
-    border-bottom: 2px solid black;
-    background-color: #50858B;
+    background-color: #083d41;
 
     transition: scale .5s;
 }
@@ -143,24 +147,19 @@
 
 
 
-::-webkit-scrollbar {
+.my-projects-boxes::-webkit-scrollbar {
     width: 12px;
     height: 10px;
 }
-::-webkit-scrollbar-thumb {
+.my-projects-boxes::-webkit-scrollbar-thumb {
     background-color: rgb(31, 31, 31);
     border-radius: 20px;
     border: 1px solid transparent;
     background-clip: content-box;
 }
-::-webkit-scrollbar-track {
-    background-color: rgb(80, 80, 80);
-}
 .my-projects-boxes::-webkit-scrollbar-track {
     background-color: transparent;
 }
-
-
 
 
 
@@ -201,11 +200,19 @@
     .project-box:hover {
         scale: 1.05;
     }
+    .contact-transition {
+        top: 0px;
+    }
     #contact {
-        height: 625px;
+        padding: 20% 5% 0% 5%;
+        height: 675px;
     }
     .contact-form input, textarea {
         margin: 15px 0px 40px 0px;
+    }
+    .contact-form button {
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -252,24 +259,18 @@
     .contact-form input, textarea {
         margin: 15px 0px 40px 0px;
     }
-}
-
-@media (max-width: 655px) {
     .contact-form button {
         margin-left: auto;
         margin-right: auto;
     }
 }
+
 @media (min-width: 768px) {
     .initialSection {
         margin: 12.5% 10% 27.5% 10%;
     }
     .initialSection div {
         font-size: 50px;
-    }
-    .contact-form button {
-        margin-left: 0px;
-        margin-right: 0px;
     }
     .contact-form input, textarea {
         margin: 5px 0px 30px 0px;
@@ -305,6 +306,9 @@
     .about-me-image {
         max-width: 100%;
     }
+    #contact {
+        padding: 15% 5% 0% 5%;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -324,5 +328,8 @@
     .project-box {
         margin-left: auto;
         margin-right: auto;
+    }
+    .contact-transition {
+        top: -100px;
     }
 }

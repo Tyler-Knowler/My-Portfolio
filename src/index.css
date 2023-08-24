@@ -12,6 +12,17 @@ code {
     monospace;
 }
 
+
+
 :hover {
   cursor: default;
 }
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #083d41;
+  overflow: auto;
+  color: white;
+}
+
