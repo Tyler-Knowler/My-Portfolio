@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import signature from './signature.png';
-import './CSSNav.css';
+import signature from '../signature.png';
+import '../CSSNav.css';
 
 const Nav = () => {
   const [colorChange, setColorchange] = useState(false);

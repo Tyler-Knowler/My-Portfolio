@@ -16,13 +16,18 @@
 #about {
     position: relative;
     z-index: 10;
-    background-color: rgba(13, 75, 69, 1);
+    background-color: #62A8AC;
     width: 100%;
     height: 500px;
 
     align-items: center;
 }
+.about-me-image-div {
+    display: flex;
+    justify-content: center;
+}
 .about-me-image {
+    max-width: 650px;
     width: 100%;
 }
 .about-me-text {
@@ -41,7 +46,7 @@
 #projects {
     position: relative;
     z-index: 10;
-    background-color: rgb(12, 65, 60);
+    background-color: #62A8AC;
     width: 90%;
     height: 550px;
 
@@ -68,8 +73,11 @@
     width: 225px;
     height: 300px;
     color: white;
-    outline: 5px solid black;
-    box-shadow: 5px 5px 10px 7px rgba(0, 56, 46, 1);
+    box-shadow: 2px 2px 5px 3px #4b888b;
+    transition: scale .5s;
+}
+.project-box:hover {
+    cursor: pointer;
 }
 
 
@@ -78,7 +86,7 @@
 #contact {
     position: relative;
     z-index: 10;
-    background-color: rgba(13, 75, 69, 1);
+    background-color: #62A8AC;
     width: 90%;
     height: 500px;
     text-align: center;
@@ -100,7 +108,7 @@
     border: none;
     border-bottom: 2px solid black;
     background-color: transparent;
-    box-shadow: 2px 2px 5px 1px rgba(0, 56, 46, .5);
+    box-shadow: 2px 2px 5px 1px #4b888b;
     height: 25px;
     font-size: 13.25px;
 }
@@ -116,6 +124,20 @@
 .contact-form button {
     width: 200px;
     height: 25px;
+    box-shadow: 2px 2px 5px 1px #4b888b;
+    
+    border: none;
+    border-bottom: 2px solid black;
+    background-color: #50858B;
+
+    transition: scale .5s;
+}
+.contact-form button:hover {
+    scale: 1.1;
+    cursor: pointer;
+}
+.contact-form input:hover, textarea:hover {
+    cursor: text;
 }
 
 
@@ -153,17 +175,31 @@
         font-size: 30px;
     }
     #about {
-        height: auto;
+        height: 850px;
         padding: 0px 0px 20px 0px;
     }
-    .grid-2 {        
-        margin: 20px;
+    .grid-2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        height: 500px;
+    }
+    #projects {
+        height: 850px;
     }
     .my-projects-boxes {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
         width: 100%;
+        max-height: 700px;
     }
     .project-box {
-        margin: 50px 15px 25px 15px;
+        margin: 30px 15px 15px 15px;
+    }
+    .project-box:hover {
+        scale: 1.05;
     }
     #contact {
         height: 625px;
@@ -184,29 +220,37 @@
         font-size: 40px;
     }
     #about {
-        height: auto;
+        height: 950px;
         padding: 0px 0px 20px 0px;
     }
-    .grid-2 {        
-        margin: 20px;
+    .grid-2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        height: 500px;
+    }
+    #projects {
+        height: 1000px;
     }
     .my-projects-boxes {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
         width: 100%;
+        height: 725px;
     }
     .project-box {
-        margin: 50px 15px 25px 15px;
+        margin: 30px 15px 15px 15px;
+    }
+    .project-box:hover {
+        scale: 1.1;
     }
     #contact {
-        height: 650px;
+        height: 600px;
     }
     .contact-form input, textarea {
         margin: 15px 0px 40px 0px;
-    }
-}
-
-@media (min-width: 620px) {
-    .project-box {
-        margin: 50px 25px 25px 25px;
     }
 }
 
@@ -244,19 +288,22 @@
     #about {
         display: grid;
         grid-template-columns: 4fr 6fr;
-        height: 500px;
+        height: 850px;
     }
     .grid-2 {
         display: grid;
         grid-template-columns: .5fr 5fr;
 
-        margin: 30px;
-        height: 440px;
+        margin: 0px 30px;
+        height: 500px;
     }
     .about-me-text h1{
         margin: 10px;
         writing-mode: vertical-rl;
         transform: rotate(-180deg);
+    }
+    .about-me-image {
+        max-width: 100%;
     }
 }
 
@@ -267,8 +314,15 @@
 }
 
 @media (min-width: 1400px) {
+    .my-projects-boxes-flex {
+        display: flex;
+        justify-content: center;
+    }
     .my-projects-boxes {
         max-width: 90%;
-        justify-content: space-between;
+    }
+    .project-box {
+        margin-left: auto;
+        margin-right: auto;
     }
 }
