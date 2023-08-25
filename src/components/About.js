@@ -1,9 +1,9 @@
-import placeholder from '../placeholder.jpg';
+import Placeholder from '../img/Placeholder.jpg';
 const About = () => {
 
 return (
     <section id='about'>
-        <div className='about-me-image-div'><img src={placeholder} className='about-me-image' alt='logo'></img></div>
+        <div className='about-me-image-div'><img src={Placeholder} className='about-me-image' alt='logo'></img></div>
         <div className='about-me-text'>
             <div className='grid-2'>
                 <h1>About Me</h1>

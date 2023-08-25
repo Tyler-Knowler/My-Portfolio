@@ -1,27 +1,27 @@
 import { useState } from 'react'
-import signature from '../signature-white.png';
 import '../CSSNav.css';
+import SignatureWhite from '../img/SignatureWhite.png';
 
 const Nav = () => {
-  const [colorChange, setColorchange] = useState(false);
-  const changeNavbarColor = () => {
+  const [colorChange, setColourchange] = useState(false);
+  const changeNavbarColour = () => {
       if (window.scrollY >= 950) {
-          setColorchange(true);
+        setColourchange(true);
       }
       else {
-          setColorchange(false);
+        setColourchange(false);
       }
   };
-  window.addEventListener('scroll', changeNavbarColor);
+  window.addEventListener('scroll', changeNavbarColour);
   return (
-    <div className={colorChange ? 'navBar-full colorChange' : 'navBar-full'}>
+    <div className={colorChange ? 'navBar-full colourChange' : 'navBar-full'}>
       <div className='navBar'>
-        <div className='logo navLeft'><a href='/'><img src={signature} className='logo' alt='logo'></img></a></div>
+        <div className='logo navLeft'><a href='/#'><img src={SignatureWhite} className='logo navElement' alt='logo'></img></a></div>
         <nav className='navMid'>
-          <a href='#about'>About Me</a>
-          <a href='#projects'>My Projects</a>
+          <a className='navElement' href='#about'>About Me</a>
+          <a className='navElement' href='#projects'>My Projects</a>
         </nav>
-        <a href='#contact' className='navRight'>Contact</a>
+        <div className='navRight navElement'><a href='#contact'>Contact</a></div>
       </div>
     </div>
   );
