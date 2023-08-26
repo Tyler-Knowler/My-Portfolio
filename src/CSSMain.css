@@ -10,7 +10,9 @@
     z-index: 9;
 }
 
-
+.initialSection, #about, #projects, #contact-section {
+    cursor: default;
+}
 
 
 #about {
@@ -85,8 +87,12 @@
 
 .contact-transition {
     position: absolute;
-    left: 0;
-    top: -50px;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+}
+.contact-transition:hover {
+    cursor: default;
 }
 #contact-section {
     position: relative;
@@ -225,12 +231,12 @@
     .project-box:hover {
         scale: 1.05;
     }
-    .contact-transition {
-        top: 0px;
-    }
     #contact-section {
         padding: 20% 5% 0% 5%;
-        height: 675px;
+    }
+    .contact-section-wrap {
+        padding: 10% 0%;
+        max-height: 100%;
     }
     .contact-form input, textarea {
         margin: 15px 0px 40px 0px;
@@ -263,7 +269,7 @@
         height: 500px;
     }
     #projects {
-        height: 1000px;
+        height: 900px;
     }
     .my-projects-boxes {
         display: grid;
@@ -278,8 +284,9 @@
     .project-box:hover {
         scale: 1.1;
     }
-    #contact-section {
-        height: 600px;
+    .contact-section-wrap {
+        padding: 10% 0%;
+        max-height: 100%;
     }
     .contact-form input, textarea {
         margin: 15px 0px 40px 0px;
@@ -331,9 +338,6 @@
     .about-me-image {
         max-width: 100%;
     }
-    #contact-section {
-        padding: 12.5% 5% 0% 5%;
-    }
 }
 
 @media (min-width: 1200px) {
@@ -355,3 +359,9 @@
         margin-right: auto;
     }
 }
+
+
+
+
+
+

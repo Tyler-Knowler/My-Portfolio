@@ -14,9 +14,6 @@ code {
 
 
 
-:hover {
-  cursor: default;
-}
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 7.5rem;
@@ -27,3 +24,20 @@ body {
   color: white;
 }
 
+@media (max-width: 575px) {
+  html {
+    scroll-padding-top: 2.5rem;
+  }
+}
+
+@media (min-width: 576px) {
+  html {
+    scroll-padding-top: 5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  html {
+    scroll-padding-top: 6rem;
+  }
+}

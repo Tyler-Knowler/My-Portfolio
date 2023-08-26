@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import '../CSSNav.css';
-import SignatureWhite from '../img/SignatureWhite.png';
 
 const Nav = () => {
   const [colorChange, setColourchange] = useState(false);
@@ -16,12 +15,12 @@ const Nav = () => {
   return (
     <div className={colorChange ? 'navBar-full colourChange' : 'navBar-full'}>
       <div className='navBar'>
-        <div className='logo navLeft'><a href='/#'><img src={SignatureWhite} className='logo navElement' alt='logo'></img></a></div>
+        <div className='navLeft navElement'><a href='/#'><p className='nav-hover'>Home</p></a></div>
         <nav className='navMid'>
-          <a className='navElement' href='#about'>About Me</a>
-          <a className='navElement' href='#projects'>My Projects</a>
+          <a className='navElement' href='#about'><p className='nav-hover'>About Me</p></a>
+          <a className='navElement' href='#projects'><p className='nav-hover'>My Projects</p></a>
         </nav>
-        <div className='navRight navElement'><a href='#contact'>Contact</a></div>
+        <div className='navRight navElement'><a href='#contact'><p className='nav-hover'>Contact</p></a></div>
       </div>
     </div>
   );

@@ -35,8 +35,8 @@
   
   color: white;
 }
-.navBar a:hover, img:hover{
-  cursor: pointer;
+.navBar p{
+  margin: 0px;
 }
 .navBar .navLeft {
   display: flex;
@@ -54,6 +54,27 @@
   display: flex;
   justify-content: right;
 }
+
+
+.nav-hover {
+  display: inline-block;
+  position: relative;
+}
+.nav-hover::after {
+  content: '';
+  position: absolute;
+  width: 120%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -5px;
+  left: -10%;
+  background-color: white;
+  transition: transform 0.25s ease-out,;
+}
+.nav-hover:hover::after {
+  transform: scaleX(1);
+}
+
 
 
 
