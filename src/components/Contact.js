@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+
 import GithubLogo from '../img/GithubLogo.png';
 import LinkedinLogo from '../img/LinkedinLogo.png';
 import TransitionWave from '../img/TransitionWave.png';
@@ -41,8 +42,8 @@ return (
         </div>
         <div className='contact-divider'></div>
         <div className='additional-links'>
-          <a href="https://github.com/Tyler-Knowler/My-Portfolio" target="_blank" rel="noopener noreferrer"><img src={GithubLogo} className='additional-logo' alt='GitHub'></img></a>
-          <a href="http://linkedin.com/in/tylerknowler" target="_blank" rel="noopener noreferrer"><img src={LinkedinLogo} className='additional-logo' alt='LinkedIn'></img></a>
+          <a href="https://github.com/Tyler-Knowler/My-Portfolio" target="_blank" rel="noopener noreferrer"><img src={GithubLogo} className='additional-logo logo-normal' alt='GitHub'></img></a>
+          <a href="http://linkedin.com/in/tylerknowler" target="_blank" rel="noopener noreferrer"><img src={LinkedinLogo} className='additional-logo logo-normal' alt='LinkedIn'></img></a>
         </div>
       </div>
     </section>

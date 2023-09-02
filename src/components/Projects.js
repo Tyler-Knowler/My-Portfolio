@@ -1,3 +1,5 @@
+import CalcImage from '../img/CalcImage.png';
+
 const Projects = () => {
 
 return (
@@ -10,7 +12,7 @@ return (
         </div>
         <div className="my-projects-boxes-flex">
             <div className='my-projects-boxes'>
-                <div className='project-box'>Example 1</div>
+                <a className='project-box' href="/calculator"><img src={CalcImage} className='project-image' alt='logo'></img></a>
                 <div className='project-box'>Example 2</div>
                 <div className='project-box'>Example 3</div>
                 <div className='project-box'>Example 4</div>

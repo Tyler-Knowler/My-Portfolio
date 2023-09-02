@@ -1,4 +1,5 @@
 import Placeholder from '../img/Placeholder.jpg';
+
 const About = () => {
 
 return (
