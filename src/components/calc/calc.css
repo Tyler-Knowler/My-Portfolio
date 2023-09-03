@@ -55,6 +55,9 @@
     border: none;
     font-size: 25px;
 }
+.calc-button:hover {
+    cursor: pointer;
+}
 
 .num-0 {
     grid-column: span 2;
