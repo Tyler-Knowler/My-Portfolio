@@ -52,6 +52,7 @@ var currentNumber;
 var negativeCheck;
 var perdiodCheck;
 var sumCompleted;
+var displayNum;
 var clearType;
 var numLength;
 var sumCheck;
@@ -73,21 +74,28 @@ function NumberClicked(buttonid) {
     id = idArray[1];
     oldNum = document.getElementById("display-num").innerHTML;
 
-    if (id === '.') {
-        perdiodCheck = oldNum.includes(".");
-        if (perdiodCheck === false) {
+
+    if (oldNum.length < 21) {
+        if (id === '.') {
+            perdiodCheck = oldNum.includes(".");
+            if (perdiodCheck === false) {
+                newNum = oldNum.concat(id);
+                document.getElementById("display-num").innerHTML = newNum;
+            }
+        } else {
+            if (oldNum === '0') {
+                document.getElementById("display-num").innerHTML = id;
+            } else if (oldNum.includes(".")) {
+                newNum = oldNum.concat(id);
+                document.getElementById("display-num").innerHTML = newNum;
+            } else {
             newNum = oldNum.concat(id);
             document.getElementById("display-num").innerHTML = newNum;
-        }
-    } else {
-        if (oldNum === '0') {
-            document.getElementById("display-num").innerHTML = id;
-        } else {
-            newNum = oldNum.concat(id);
-            newNum = newNum.replaceAll(",", "");
-            document.getElementById("display-num").innerHTML = Number(newNum).toLocaleString("en-GB");
+            }
         }
     }
+
+    LengthCheck();
 }
 
 function ClearClicked() {
@@ -99,6 +107,8 @@ function ClearClicked() {
         document.getElementById("display-num").innerHTML = '0';
         document.getElementById("previous-num").innerHTML = '.';
     }
+    
+    LengthCheck();
 }
 
 function FlipSign() {
@@ -115,17 +125,20 @@ function FlipSign() {
             document.getElementById("display-num").innerHTML = newNum; 
         }
     }
+    
+    LengthCheck();
 }
 
 function Percentage() {
     oldNum = document.getElementById("display-num").innerHTML;
-    oldNum = oldNum.replaceAll(",", "");
     numLength = oldNum.length;
     if (numLength > 0) {
         newNum = oldNum/100;
-        document.getElementById("display-num").innerHTML = newNum.toLocaleString("en-GB");
+        document.getElementById("display-num").innerHTML = newNum;
         sumCompleted = true;
     }
+    
+    LengthCheck();
 }
 
 function ChosenFunc(buttonid) {
@@ -137,14 +150,14 @@ function ChosenFunc(buttonid) {
     functionClicked = FCArray[1];
 
     previousNumber = document.getElementById("display-num").innerHTML;
-    previousNumber = previousNumber.replaceAll(",", "");
     document.getElementById("previous-num").innerHTML = (previousNumber + ' ' + functionSymbol);
     document.getElementById("display-num").innerHTML = 0;
+
+    LengthCheck();
 }
 
 function Sum() {
     currentNumber = document.getElementById("display-num").innerHTML;
-    currentNumber = currentNumber.replaceAll(",", "");
     previousNumber = document.getElementById("previous-num").innerHTML;
     const SumArray = previousNumber.split(" ");
 
@@ -155,10 +168,10 @@ function Sum() {
             oldNum = (currentNumber+' '+SumArray[1]+' '+SumArray[2]+' = ');
             document.getElementById("previous-num").innerHTML = oldNum;
             newNum = Number(currentNumber) / Number(SumArray[2]);
-            document.getElementById("display-num").innerHTML = newNum.toLocaleString("en-GB");
+            document.getElementById("display-num").innerHTML = newNum;
         } else {
             newNum = Number(SumArray[0]) / Number(currentNumber);
-            document.getElementById("display-num").innerHTML = newNum.toLocaleString("en-GB");
+            document.getElementById("display-num").innerHTML = newNum;
             oldNum = previousNumber.concat(' ',currentNumber, ' = ');
             document.getElementById("previous-num").innerHTML = oldNum;
         }
@@ -167,10 +180,10 @@ function Sum() {
             oldNum = (currentNumber+' '+SumArray[1]+' '+SumArray[2]+' = ');
             document.getElementById("previous-num").innerHTML = oldNum;
             newNum = Number(currentNumber) * Number(SumArray[2]);
-            document.getElementById("display-num").innerHTML = newNum.toLocaleString("en-GB");
+            document.getElementById("display-num").innerHTML = newNum;
         } else {
             newNum = Number(SumArray[0]) * Number(currentNumber);
-            document.getElementById("display-num").innerHTML = newNum.toLocaleString("en-GB");
+            document.getElementById("display-num").innerHTML = newNum;
             oldNum = previousNumber.concat(' ',currentNumber, ' = ');
             document.getElementById("previous-num").innerHTML = oldNum;
         }
@@ -179,10 +192,10 @@ function Sum() {
             oldNum = (currentNumber+' '+SumArray[1]+' '+SumArray[2]+' = ');
             document.getElementById("previous-num").innerHTML = oldNum;
             newNum = Number(currentNumber) - Number(SumArray[2]);
-            document.getElementById("display-num").innerHTML = newNum.toLocaleString("en-GB");
+            document.getElementById("display-num").innerHTML = newNum;
         } else {
             newNum = Number(SumArray[0]) - Number(currentNumber);
-            document.getElementById("display-num").innerHTML = newNum.toLocaleString("en-GB");
+            document.getElementById("display-num").innerHTML = newNum;
             oldNum = previousNumber.concat(' ',currentNumber, ' = ');
             document.getElementById("previous-num").innerHTML = oldNum;
         }
@@ -191,13 +204,28 @@ function Sum() {
             oldNum = (currentNumber+' '+SumArray[1]+' '+SumArray[2]+' = ');
             document.getElementById("previous-num").innerHTML = oldNum;
             newNum = Number(currentNumber) + Number(SumArray[2]);
-            document.getElementById("display-num").innerHTML = newNum.toLocaleString("en-GB");
+            document.getElementById("display-num").innerHTML = newNum;
         } else {
             newNum = Number(SumArray[0]) + Number(currentNumber);
-            document.getElementById("display-num").innerHTML = newNum.toLocaleString("en-GB");
+            document.getElementById("display-num").innerHTML = newNum;
             oldNum = previousNumber.concat(' ',currentNumber, ' = ');
             document.getElementById("previous-num").innerHTML = oldNum;
         }
     }
+    LengthCheck();
     sumCompleted = true;
+}
+
+
+function LengthCheck() {
+    displayNum = document.getElementById("display-num").innerHTML;
+    if (displayNum.length < 13) {
+        document.getElementById("display-num").style.fontSize = "3.5em";
+    } else if (displayNum.length < 16 && displayNum.length >= 13) {
+        document.getElementById("display-num").style.fontSize = "3em";
+    } else if (displayNum.length < 18 && displayNum.length >= 15) {
+        document.getElementById("display-num").style.fontSize = "2.5em";
+    } else if (displayNum.length > 18) {
+        document.getElementById("display-num").style.fontSize = "2em";
+    }
 }
