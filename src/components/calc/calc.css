@@ -73,11 +73,21 @@
     background-color: #e29a13;
 }
 
+.calc-number:hover {
+    background-color: #727272;
+}
+.calc-function-top:hover {
+    background-color: #d1d1d1;
+}
+.calc-function-right:hover {
+    background-color: #d19119;
+}
+
 .calc-number:active {
     background-color: #646464;
 }
 .calc-function-top:active {
-    background-color: #c9c9c9;
+    background-color: #bdbdbd;
 }
 .calc-function-right:active {
     background-color: #b47b11;
