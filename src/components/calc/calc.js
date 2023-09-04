@@ -10,11 +10,11 @@ const Calc = () => {
         <section id='calc'>
             <div className='calc-wrapper'>
                 <div className='calc-screen'>
-                    <div className='previous-entry'><p id='previous-num'>1415</p></div>
+                    <div className='previous-entry'><p id='previous-num'>.</p></div>
                     <div className='current-number'><p id='display-num'>0</p></div>
                 </div>
                 <div className='calc-buttons'>
-                    <button onClick={ClearClicked}  id='clear-display' className='calc-button calc-function-top'>C</button>
+                    <button onClick={ClearClicked}  id='clear-display' className='calc-button calc-function-top'>AC</button>
                     <button onClick={FlipSign}      className='calc-button calc-function-top'>+ / -</button>
                     <button onClick={Percentage}    className='calc-button calc-function-top'>%</button>
                     <button onClick={ChosenFunc}    id='func_divide' className='calc-button calc-function-right'>÷</button>
@@ -221,11 +221,11 @@ function LengthCheck() {
     displayNum = document.getElementById("display-num").innerHTML;
     if (displayNum.length < 13) {
         document.getElementById("display-num").style.fontSize = "3.5em";
-    } else if (displayNum.length < 16 && displayNum.length >= 13) {
+    } else if (displayNum.length < 15 && displayNum.length >= 13) {
         document.getElementById("display-num").style.fontSize = "3em";
-    } else if (displayNum.length < 18 && displayNum.length >= 15) {
+    } else if (displayNum.length < 18 && displayNum.length >= 14) {
         document.getElementById("display-num").style.fontSize = "2.5em";
-    } else if (displayNum.length > 18) {
+    } else if (displayNum.length >= 18) {
         document.getElementById("display-num").style.fontSize = "2em";
     }
 }
