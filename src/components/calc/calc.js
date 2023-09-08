@@ -66,6 +66,7 @@ function NumberClicked(buttonid) {
     if (sumCompleted === true) {
         document.getElementById("display-num").innerHTML = 0;
         document.getElementById("previous-num").innerHTML = '.';
+        document.getElementById("previous-num").style.color = "#242424";
         sumCompleted = false;
     }
 
@@ -75,7 +76,7 @@ function NumberClicked(buttonid) {
     oldNum = document.getElementById("display-num").innerHTML;
 
 
-    if (oldNum.length < 21) {
+    if (oldNum.length < 23) {
         if (id === '.') {
             perdiodCheck = oldNum.includes(".");
             if (perdiodCheck === false) {
@@ -85,18 +86,21 @@ function NumberClicked(buttonid) {
         } else {
             if (oldNum === '0') {
                 document.getElementById("display-num").innerHTML = id;
-            } else if (oldNum.includes(".")) {
-                newNum = oldNum.concat(id);
-                document.getElementById("display-num").innerHTML = newNum;
             } else {
-            newNum = oldNum.concat(id);
-            document.getElementById("display-num").innerHTML = newNum;
+                newNum = oldNum.concat(id);
+                perdiodCheck = oldNum.includes(".");
+                if (perdiodCheck === false && newNum.length >= 4) {
+                    UnitSetting();
+                }
+                document.getElementById("display-num").innerHTML = newNum;
             }
         }
     }
 
     LengthCheck();
 }
+
+
 
 function ClearClicked() {
     clearType = document.getElementById("clear-display").innerHTML;
@@ -106,10 +110,13 @@ function ClearClicked() {
     } else {
         document.getElementById("display-num").innerHTML = '0';
         document.getElementById("previous-num").innerHTML = '.';
+        document.getElementById("previous-num").style.color = "#242424";
     }
     
     LengthCheck();
 }
+
+
 
 function FlipSign() {
     oldNum = document.getElementById("display-num").innerHTML;
@@ -129,6 +136,8 @@ function FlipSign() {
     LengthCheck();
 }
 
+
+
 function Percentage() {
     oldNum = document.getElementById("display-num").innerHTML;
     numLength = oldNum.length;
@@ -141,23 +150,35 @@ function Percentage() {
     LengthCheck();
 }
 
+
+
 function ChosenFunc(buttonid) {
     sumCompleted = false;
+    previousNumber = document.getElementById("previous-num").innerHTML;
+
+    if(previousNumber !== ".") {
+        Sum();
+        sumCompleted = false;
+    }
 
     functionClicked = buttonid.target.getAttribute('id');
     functionSymbol = document.getElementById(functionClicked).innerHTML;
     const FCArray = functionClicked.split("_");
     functionClicked = FCArray[1];
 
-    previousNumber = document.getElementById("display-num").innerHTML;
+    previousNumber = document.getElementById("display-num").innerHTML
+    previousNumber = previousNumber.replaceAll(',','');
     document.getElementById("previous-num").innerHTML = (previousNumber + ' ' + functionSymbol);
+    document.getElementById("previous-num").style.color = "#adadad";
     document.getElementById("display-num").innerHTML = 0;
-
     LengthCheck();
 }
 
+
+
 function Sum() {
     currentNumber = document.getElementById("display-num").innerHTML;
+    currentNumber = currentNumber.replaceAll(',','');;
     previousNumber = document.getElementById("previous-num").innerHTML;
     const SumArray = previousNumber.split(" ");
 
@@ -165,55 +186,54 @@ function Sum() {
 
     if (SumArray[1] === '÷') {
         if (sumCheck === true) {
-            oldNum = (currentNumber+' '+SumArray[1]+' '+SumArray[2]+' = ');
-            document.getElementById("previous-num").innerHTML = oldNum;
             newNum = Number(currentNumber) / Number(SumArray[2]);
-            document.getElementById("display-num").innerHTML = newNum;
+            NumChange();
         } else {
             newNum = Number(SumArray[0]) / Number(currentNumber);
-            document.getElementById("display-num").innerHTML = newNum;
-            oldNum = previousNumber.concat(' ',currentNumber, ' = ');
-            document.getElementById("previous-num").innerHTML = oldNum;
+            NumChange();
         }
     } else if (SumArray[1] === 'x') {
         if (sumCheck === true) {
-            oldNum = (currentNumber+' '+SumArray[1]+' '+SumArray[2]+' = ');
-            document.getElementById("previous-num").innerHTML = oldNum;
             newNum = Number(currentNumber) * Number(SumArray[2]);
-            document.getElementById("display-num").innerHTML = newNum;
+            NumChange();
         } else {
             newNum = Number(SumArray[0]) * Number(currentNumber);
-            document.getElementById("display-num").innerHTML = newNum;
-            oldNum = previousNumber.concat(' ',currentNumber, ' = ');
-            document.getElementById("previous-num").innerHTML = oldNum;
+            NumChange();
         }
     } else if (SumArray[1] === '-') {
         if (sumCheck === true) {
-            oldNum = (currentNumber+' '+SumArray[1]+' '+SumArray[2]+' = ');
-            document.getElementById("previous-num").innerHTML = oldNum;
             newNum = Number(currentNumber) - Number(SumArray[2]);
-            document.getElementById("display-num").innerHTML = newNum;
+            NumChange();
         } else {
             newNum = Number(SumArray[0]) - Number(currentNumber);
-            document.getElementById("display-num").innerHTML = newNum;
-            oldNum = previousNumber.concat(' ',currentNumber, ' = ');
-            document.getElementById("previous-num").innerHTML = oldNum;
+            NumChange();
         }
     } else if (SumArray[1] === '+') {
         if (sumCheck === true) {
-            oldNum = (currentNumber+' '+SumArray[1]+' '+SumArray[2]+' = ');
-            document.getElementById("previous-num").innerHTML = oldNum;
             newNum = Number(currentNumber) + Number(SumArray[2]);
-            document.getElementById("display-num").innerHTML = newNum;
+            NumChange();
         } else {
             newNum = Number(SumArray[0]) + Number(currentNumber);
-            document.getElementById("display-num").innerHTML = newNum;
-            oldNum = previousNumber.concat(' ',currentNumber, ' = ');
-            document.getElementById("previous-num").innerHTML = oldNum;
+            NumChange();
         }
     }
     LengthCheck();
     sumCompleted = true;
+}
+
+function NumChange() {
+    previousNumber = document.getElementById("previous-num").innerHTML;
+    const SumArray = previousNumber.split(" ");
+    UnitSetting();
+    document.getElementById("display-num").innerHTML = newNum;
+
+    if (sumCheck === true) {
+        oldNum = (currentNumber+' '+SumArray[1]+' '+SumArray[2]+' = ');
+    } else {
+        oldNum = previousNumber.concat(' ',currentNumber, ' = ');
+    }
+
+    document.getElementById("previous-num").innerHTML = oldNum;
 }
 
 
@@ -227,5 +247,41 @@ function LengthCheck() {
         document.getElementById("display-num").style.fontSize = "2.5em";
     } else if (displayNum.length >= 18) {
         document.getElementById("display-num").style.fontSize = "2em";
+    }
+}
+
+function UnitSetting() {
+    var tempNum = newNum+'';
+    var activePerdiodCheck = tempNum.includes('.');
+
+    const UnitArray = tempNum.split('.');
+    newNum = UnitArray[0];
+
+    if (newNum.includes(',') === true) {
+        newNum = newNum.replaceAll(',','');
+    }
+    var diff = newNum.length-3;
+
+
+    if (newNum.length > 3 && newNum.length < 7 ) {
+        newNum = newNum.substr(0, diff) + ',' + newNum.substr(diff, 3);
+    } else if (newNum.length >= 7 && newNum.length < 10) {
+        diff = newNum.length-6;
+        newNum = newNum.substr(0, diff) + ',' + newNum.substr(diff, 3) + ',' + newNum.substr(diff+3,3);
+    } else if (newNum.length >= 10 && newNum.length < 13) {
+        diff = newNum.length-9;
+        newNum = newNum.substr(0, diff) + ',' + newNum.substr(diff, 3) + ',' + newNum.substr(diff+3,3) + ',' + newNum.substr(diff+6,3);
+    } else if (newNum.length >= 13 && newNum.length < 16) {
+        diff = newNum.length-12;
+        newNum = newNum.substr(0, diff) + ',' + newNum.substr(diff, 3) + ',' + newNum.substr(diff+3,3) + ',' + newNum.substr(diff+6,3) + ',' + newNum.substr(diff+9,3);
+    } else if (newNum.length >= 16 && newNum.length < 19) {
+        diff = newNum.length-15;
+        newNum = newNum.substr(0, diff) + ',' + newNum.substr(diff, 3) + ',' + newNum.substr(diff+3,3) + ',' + newNum.substr(diff+6,3) + ',' + newNum.substr(diff+9,3) + ',' + newNum.substr(diff+12,3);
+    }
+
+    if (activePerdiodCheck === true) {
+        if (UnitArray[1] !== null) {
+            newNum = newNum.concat('.',UnitArray[1]);
+        } 
     }
 }
