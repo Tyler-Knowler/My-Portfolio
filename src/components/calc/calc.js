@@ -10,7 +10,7 @@ const Calc = () => {
         <section id='calc'>
             <div className='calc-wrapper'>
                 <div className='calc-screen'>
-                    <div className='previous-entry'><p id='previous-num'>.</p></div>
+                    <div className='previous-entry'><p id='previous-num'>:)</p></div>
                     <div className='current-number'><p id='display-num'>0</p></div>
                 </div>
                 <div className='calc-buttons'>

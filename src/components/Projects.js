@@ -12,8 +12,8 @@ return (
         </div>
         <div className="my-projects-boxes-flex">
             <div className='my-projects-boxes'>
-                <a className='project-box' href="/calculator"><img src={CalcImage} className='project-image' alt='logo'></img></a>
-                <div className='project-box'>Example 2</div>
+                <div className='project-box'><a href="/calculator"><img src={CalcImage} className='project-image' alt='logo'></img><span className='project-title-span'></span><p className='project-title'>Standard Calculator</p></a></div>
+                <div className='project-box'><a href="/leaguecalc"><img src={CalcImage} className='project-image' alt='logo'></img><span className='project-title-span'></span><p className='project-title'>LoL Calculator</p></a></div>
                 <div className='project-box'>Example 3</div>
                 <div className='project-box'>Example 4</div>
                 <div className='project-box'>Example 5</div>
