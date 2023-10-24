@@ -1,5 +1,3 @@
-import CalcImage from '../img/CalcImage.png';
-
 const Projects = () => {
 
 return (
