@@ -7,13 +7,14 @@ import Contact from './components/Contact';
 import Projects from './components/Projects';
 import About from './components/About';
 
+
 function Home() {
   return (
     <React.StrictMode>
       <Nav />
       <div className='main-div'>
         <section className='initialSection'>
-          <div>Welcome!<br></br>Come take a look around</div>
+          <div>Hi! I'm <span className='initialName'>Tyler,</span><br></br>an aspiring full-stack web developer.</div>
         </section>
           <About />
           <Projects />

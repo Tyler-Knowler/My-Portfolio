@@ -19,9 +19,9 @@ html {
   scroll-padding-top: 7.5rem;
 }
 body {
-  background-color: #083d41;
+  background-color: #f7f7f7;
   overflow: auto;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 @media (max-width: 575px) {

@@ -3,7 +3,6 @@ import emailjs from '@emailjs/browser';
 
 import GithubLogo from '../img/GithubLogo.png';
 import LinkedinLogo from '../img/LinkedinLogo.png';
-import TransitionWave from '../img/TransitionWave.png';
 
 const Contact = () => {
     const ContactForm = useRef();
@@ -21,8 +20,6 @@ const Contact = () => {
     };
 return (
     <section id='contact-section'>
-      <img src={TransitionWave} className='contact-transition' alt=''></img>
-      <div className='contact-section-wrap'>
         <div className='contact-me-text'>
           <div>
             <h1 id='contact'>Contact Me</h1>
@@ -45,7 +42,6 @@ return (
           <a href="https://github.com/Tyler-Knowler/My-Portfolio" target="_blank" rel="noopener noreferrer"><img src={GithubLogo} className='additional-logo logo-normal' alt='GitHub'></img></a>
           <a href="http://linkedin.com/in/tylerknowler" target="_blank" rel="noopener noreferrer"><img src={LinkedinLogo} className='additional-logo logo-normal' alt='LinkedIn'></img></a>
         </div>
-      </div>
     </section>
 )}
 

@@ -13,7 +13,7 @@ const Nav = () => {
   };
   window.addEventListener('scroll', changeNavbarColour);
   return (
-    <div className={colorChange ? 'navBar-full colourChange' : 'navBar-full'}>
+    <div className={colorChange ? 'navBar-full colourChange' : 'navBar-full colorChange2'}>
       <div className='navBar'>
         <div className='navLeft navElement'><a href='/#'><p className='nav-hover'>Home</p></a></div>
         <nav className='navMid'>

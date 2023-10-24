@@ -1,5 +1,6 @@
 .main-div {
     display: block;
+    font-family: 'Playpen Sans', cursive;
 }
 .initialSection {
     position: sticky;
@@ -9,16 +10,20 @@
 
     z-index: 9;
 }
+.initialName {
+    color: #1ca78f;
+}
 
 .initialSection, #about, #projects, #contact-section {
     cursor: default;
 }
 
 
+
 #about {
     position: relative;
     z-index: 10;
-    background-color: #021f22;
+    background-color: #e9e9e9;
     width: 100%;
     height: 500px;
 
@@ -49,7 +54,7 @@
 #projects {
     position: relative;
     z-index: 10;
-    background-color: #021f22;
+    background-color: #e9e9e9;
     width: 90%;
     height: 550px;
 
@@ -143,10 +148,10 @@
 #contact-section {
     position: relative;
     z-index: 10;
-    background-color: #083d41;
+    background-color: #f7f7f7;
     width: 90%;
     text-align: center;
-    padding: 10% 5%;
+    padding: 2.5% 5% 10% 5%;
 }
 .contact-me-text {
     padding-top: 10px;
@@ -154,11 +159,10 @@
 .contact-form {
     display: grid;
     grid-template-rows: .5fr;
-    width: 60%;
     margin-top: 50px;
     margin-right: auto;
     margin-left: auto;
-    text-align: left;
+    text-align: left; 
 }
 .contact-form p {
     padding: 0px;
@@ -166,14 +170,20 @@
 }
 .contact-form input, textarea {
     border: none;
-    color: rgb(211, 211, 211);
-    border-bottom: 2px solid white;
+    color: #000000;
+    border-bottom: 2px solid #000000;
     background-color: transparent;
     height: 25px;
     font-size: 13.25px;
+    
+    font-family: 'Playpen Sans', cursive;
 }
 .contact-form input:focus, textarea:focus {
+    border-bottom: 2px solid #1ca78f;
     outline: none;
+
+    
+    transition: border-bottom .25s;
 }
 .contact-form textarea {
     font: inherit;
@@ -184,18 +194,18 @@
 .contact-form button {
     width: 200px;
     height: 40px;
-    border: none;
-    color: white;
-    background-color: #083d41;
-    box-shadow: 2px 2px 5px 1px #010f11;
+    border: 2px solid #000000;
+    border-radius: 25px;
+    color: #000000;
+    background-color: #f7f7f7;
 
     transition: background-color .25s, border .25s, scale .25s;
+    font-family: 'Playpen Sans', cursive;
 }
 .contact-form button:hover {
     scale: 1.1;
     cursor: pointer;
-    border: 2px solid white;
-    background-color: #077f88;
+    background-color: #1ca78f;
 }
 .contact-form input:hover, textarea:hover {
     cursor: text;
@@ -203,7 +213,7 @@
 .contact-divider {
     width: 80%;
     height: 2px;
-    background-color: #077f88;
+    background-color: #1ca78f;
     margin: 30px auto;
 }
 
@@ -267,13 +277,6 @@
     .project-image {
         top: -10px;
     }
-    #contact-section {
-        padding: 20% 5% 0% 5%;
-    }
-    .contact-section-wrap {
-        padding: 10% 0%;
-        max-height: 100%;
-    }
     .contact-form input, textarea {
         margin: 15px 0px 40px 0px;
     }
@@ -320,10 +323,6 @@
     .project-box:hover {
         scale: 1.1;
     }
-    .contact-section-wrap {
-        padding: 10% 0%;
-        max-height: 100%;
-    }
     .contact-form input, textarea {
         margin: 15px 0px 40px 0px;
     }
@@ -343,6 +342,9 @@
     .initialSection div {
         font-size: 50px;
     }
+    .contact-form {
+        width: 80%;
+    }
     .contact-form input, textarea {
         margin: 5px 0px 30px 0px;
     }
@@ -353,8 +355,8 @@
 
 @media (min-width: 992px) {
     .initialSection {
-        margin: 12.5% 10% 27.5% 10%;
-        top: 40%;
+        margin: 7.5% 7.5% 27.5% 7.5%;
+        top: 30%;
         height: 500px;
     }
     .initialSection div {
@@ -380,7 +382,11 @@
     .about-me-image {
         max-width: 100%;
     }
+    .contact-form {
+        width: 70%;
+    }
 }
+
 
 @media (min-width: 1200px) {
     .initialSection div {
@@ -402,6 +408,9 @@
     .project-box {
         margin-left: auto;
         margin-right: auto;
+    }
+    .contact-form {
+        width: 60%;
     }
 }
 
