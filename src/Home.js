@@ -14,7 +14,7 @@ function Home() {
       <Nav />
       <div className='main-div'>
         <section className='initialSection'>
-          <div>Hi! I'm <span className='initialName'>Tyler,</span><br></br>an aspiring full-stack web developer.</div>
+          <div className='initialText'><p className='topText'>Hi! I'm <span className='initialName'>Tyler,</span></p><p className='bottomText'>a full-stack web developer.</p></div>
         </section>
           <About />
           <Projects />

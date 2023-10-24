@@ -5,13 +5,22 @@
 .initialSection {
     position: sticky;
 
-    display: flex;
-    justify-content: space-around;
-
     z-index: 9;
+}
+.initialText {
+    margin-left: 10%;
+}
+.topText {
+    margin: 0;
+    font-size: 75px;
+}
+.bottomText {
+    margin: 0;
+    font-size: 60px;
 }
 .initialName {
     color: #1ca78f;
+    font-size: 90px;
 }
 
 .initialSection, #about, #projects, #contact-section {
@@ -19,42 +28,28 @@
 }
 
 
-
 #about {
+    padding: 2.5%;
+    
     position: relative;
     z-index: 10;
-    background-color: #e9e9e9;
-    width: 100%;
+    background-color: #ffffff;
+    width: 95%;
     height: 500px;
-
-    align-items: center;
+    
 }
-.about-me-image-div {
-    display: flex;
-    justify-content: center;
+#about h1, #about p{
+    margin-left: 10%;
+    margin-right: 10%;
+    
 }
-.about-me-image {
-    max-width: 650px;
-    width: 100%;
-}
-.about-me-text {
-    padding: 0% 5%;
-    text-align: center;
-}
-.grid-2{
-    font-size: 16px;
-    align-items: center;
-  
-    list-style: none;
-}
-
 
 
 
 #projects {
     position: relative;
     z-index: 10;
-    background-color: #e9e9e9;
+    background-color: #ffffff;
     width: 90%;
     height: 550px;
 
@@ -248,14 +243,6 @@
     }
     #about {
         height: 850px;
-        padding: 0px 0px 20px 0px;
-    }
-    .grid-2 {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        height: 500px;
     }
     #projects {
         height: 850px;
@@ -298,14 +285,6 @@
     }
     #about {
         height: 950px;
-        padding: 0px 0px 20px 0px;
-    }
-    .grid-2 {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        height: 500px;
     }
     #projects {
         height: 900px;
@@ -363,8 +342,6 @@
         font-size: 70px;
     }
     #about {
-        display: grid;
-        grid-template-columns: 4fr 6fr;
         height: 850px;
     }
     .grid-2 {
@@ -373,14 +350,6 @@
 
         margin: 0px 30px;
         height: 500px;
-    }
-    .about-me-text h1{
-        margin: 10px;
-        writing-mode: vertical-rl;
-        transform: rotate(-180deg);
-    }
-    .about-me-image {
-        max-width: 100%;
     }
     .contact-form {
         width: 70%;
