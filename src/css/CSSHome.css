@@ -245,7 +245,7 @@
 
 
 
-@media (max-width: 575px) { 
+@media only screen and (max-width: 575px) { 
     .initialSection {
         margin: 5% 10% 50% 10%;
         top: 40%;
