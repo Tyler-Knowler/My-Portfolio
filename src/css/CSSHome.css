@@ -245,7 +245,7 @@
 
 
 
-@media only screen and (max-width: 575px) { 
+@media (max-width: 575px) { 
     .initialSection {
         margin: 5% 10% 50% 10%;
         top: 40%;
@@ -265,7 +265,7 @@
     .about-me-box {
         max-width: 270px;
         min-width: 150px;
-        width: 49%;
+        width: 45%;
         height: 300px;
     }
     .break {
@@ -301,7 +301,7 @@
     }
 }
 
-@media only screen and (min-width: 576px) { 
+@media (min-width: 576px) { 
     .initialSection {
         margin: 5% 10% 50% 10%;
         top: 40%;
