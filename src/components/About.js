@@ -1,15 +1,31 @@
 const About = () => {
 
+
 return (
     <section id='about'>
-        <div className='about-me-text'>
-            <h1>About Me</h1>
-            <span><p>I'm Tyler, a beginner in Web Development, trying to figure out how this stuff works :)</p>
-            <p>I currently work as a Residential Support Worker and previously as a Learning Support Worker. I learnt a lot while working in these positions and I enjoyed them thoroughly, however, I have always had a passion for computers and I want to begin a career in Web Development.</p>
-            <p>I wanted to make this page as I wanted to learn how to use Node.js and React. So I thought, what better way than to make a website myself where I can display some of the different projects I've made on this journey.</p>
-            <p>My goal for this is to imrpove my skills in web development and to display what I'm capable of doing.</p></span>
+        <h1>About Me</h1>
+        <div className='about-me-flex'>
+            <div className="about-me-box about-me-personal">
+                <div className="table-top personal-top"><p>About Me</p></div>
+                <div className="table-content personal-content"></div>
+            </div>
+            <div className="about-me-box about-me-front">
+                <div className="table-top front-top"><p>Front End Skills</p></div>
+                <div className="table-content front-content"></div>
+            </div>
+            <div className="break"></div>
+            <div className="about-me-box about-me-back">
+                <div className="table-top back-top"><p>Back End Skills</p></div>
+                <div className="table-content back-content"></div>
+            </div>
+            <div className="about-me-box about-me-other">
+                <div className="table-top other-top"><p>Other Skills</p></div>
+                <div className="table-content other-content"></div>
+            </div>
         </div>
     </section>
 )}
-    
+
+
 export default About;
+

@@ -34,14 +34,28 @@
     position: relative;
     z-index: 10;
     background-color: #ffffff;
-    width: 95%;
+    width: 90%;
     height: 500px;
     
+    padding: 5%; 
 }
-#about h1, #about p{
-    margin-left: 10%;
-    margin-right: 10%;
-    
+#about h1 {
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+.about-me-box{
+    text-align: center;
+
+    border: 2px solid black;
+}
+.about-me-flex{
+    display: flex;
+    justify-content: space-between;
+}
+.about-me-box p{
+    margin-top: 13px;
+    margin-bottom: 13px;
 }
 
 
@@ -65,7 +79,7 @@
     font-size: 16px;
 }
 
-.my-projects-boxes {    
+.my-projects-boxes {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -242,7 +256,21 @@
         font-size: 30px;
     }
     #about {
-        height: 850px;
+        height: 700px;
+    }
+    .about-me-flex {
+        flex-wrap: wrap;
+        padding: 5% 0% 10% 0%;
+    }
+    .about-me-box {
+        max-width: 270px;
+        min-width: 150px;
+        width: 49%;
+        height: 300px;
+    }
+    .break {
+        width: 100%;
+        height: 25px;
     }
     #projects {
         height: 850px;
@@ -284,7 +312,21 @@
         font-size: 40px;
     }
     #about {
-        height: 950px;
+        height: 700px;
+    }
+    .about-me-flex {
+        padding: 5% 5% 10% 5%;
+        flex-wrap: wrap;
+    }
+    .about-me-box {
+        max-width: 270px;
+        min-width: 150px;
+        width: 45%;
+        height: 300px;
+    }
+    .break {
+        width: 100%;
+        height: 25px;
     }
     #projects {
         height: 900px;
@@ -321,6 +363,15 @@
     .initialSection div {
         font-size: 50px;
     }
+    #about {
+        height: 800px;
+    }
+    .about-me-flex {
+        padding: 5% 7.5%;
+    }
+    .about-me-box {
+        height: 350px;
+    }
     .contact-form {
         width: 80%;
     }
@@ -342,7 +393,15 @@
         font-size: 70px;
     }
     #about {
-        height: 850px;
+        height: 900px;
+    }
+    .about-me-flex {
+        padding: 5% 10%;
+    }
+    .about-me-box {
+        max-width: 350px;
+        height: 400px;
+        width: 40%;
     }
     .grid-2 {
         display: grid;
@@ -360,6 +419,20 @@
 @media (min-width: 1200px) {
     .initialSection div {
         font-size: 90px;
+    }
+    #about {
+        height: 500px;
+    }
+    .about-me-flex {
+        padding: 2.5% 2% 5% 2%;
+    }
+    .about-me-box {
+        max-width: 300px;
+        height: 400px;
+        width: 20%;
+    }
+    .break {
+        display: none;
     }
     #contact-section {
         height: 500px;
@@ -383,6 +456,15 @@
     }
 }
 
+
+@media (min-width: 2000px) {
+    
+    .about-me-box {
+        max-width: 10000px;
+        height: 400px;
+        width: 20%;
+    }
+}
 
 
 
