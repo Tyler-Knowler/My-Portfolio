@@ -7,9 +7,6 @@
 
     z-index: 9;
 }
-.initialText {
-    margin-left: 10%;
-}
 .topText {
     margin: 0;
     font-size: 75px;
@@ -20,7 +17,6 @@
 }
 .initialName {
     color: #1ca78f;
-    font-size: 90px;
 }
 
 .initialSection, #about, #projects, #contact-section {
@@ -54,8 +50,26 @@
     justify-content: space-between;
 }
 .about-me-box p{
-    margin-top: 13px;
-    margin-bottom: 13px;
+    margin: 0px;
+}
+.table-top {
+    display: table;
+    height: 75px;
+    width: 100%;
+    background-color: #5ee6cf;
+}
+.table-top p {
+    display: table-cell;
+    vertical-align: middle;
+}
+.table-content {
+    display: table;
+    width: 100%;
+    background-color: #f5fffb;
+}
+.table-content div {
+    display: table-cell;
+    padding: 0% 20px;
 }
 
 
@@ -252,8 +266,14 @@
 
         height: 650px;
     }
-    .initialSection div {
-        font-size: 30px;
+    .initialText {
+        margin-left: 7.5%;
+    }
+    .initialSection div p {
+        font-size: 5vw;
+    }
+    .initialName {
+        font-size: 6vw;
     }
     #about {
         height: 700px;
@@ -267,6 +287,14 @@
         min-width: 150px;
         width: 45%;
         height: 300px;
+    }
+    .table-content {
+        height: 225px;
+    }
+    .table-content p {
+        display: table-cell;
+        padding: 5% 0px;
+        font-size: 12px;
     }
     .break {
         width: 100%;
@@ -308,8 +336,14 @@
 
         height: 650px;
     }
-    .initialSection div {
-        font-size: 40px;
+    .initialText {
+        margin-left: 7.5%;
+    }
+    .initialSection div p {
+        font-size: 5vw;
+    }
+    .initialName {
+        font-size: 6vw;
     }
     #about {
         height: 700px;
@@ -323,6 +357,14 @@
         min-width: 150px;
         width: 45%;
         height: 300px;
+    }
+    .table-content {
+        height: 225px;
+    }
+    .table-content p {
+        display: table-cell;
+        padding: 5% 0px;
+        font-size: 12px;
     }
     .break {
         width: 100%;
@@ -360,9 +402,6 @@
     .initialSection {
         margin: 12.5% 10% 27.5% 10%;
     }
-    .initialSection div {
-        font-size: 50px;
-    }
     #about {
         height: 800px;
     }
@@ -371,6 +410,12 @@
     }
     .about-me-box {
         height: 350px;
+    }
+    .table-content {
+        height: 275px;
+    }
+    .table-content p {
+        font-size: 14px;
     }
     .contact-form {
         width: 80%;
@@ -389,9 +434,6 @@
         top: 30%;
         height: 500px;
     }
-    .initialSection div {
-        font-size: 70px;
-    }
     #about {
         height: 900px;
     }
@@ -402,6 +444,15 @@
         max-width: 350px;
         height: 400px;
         width: 40%;
+    }
+    .table-content {
+        height: 325px;
+    }
+    .table-content div {
+        display: table-cell;
+    }
+    .table-content p {
+        font-size: 14px;
     }
     .grid-2 {
         display: grid;
@@ -417,8 +468,11 @@
 
 
 @media (min-width: 1200px) {
-    .initialSection div {
-        font-size: 90px;
+    .initialSection div p {
+        font-size: 4vw;
+    }
+    .initialName {
+        font-size: 5vw;
     }
     #about {
         height: 500px;
@@ -428,8 +482,14 @@
     }
     .about-me-box {
         max-width: 300px;
-        height: 400px;
         width: 20%;
+    }
+    .table-content div {
+        display: table-cell;
+        font-size: 12px;
+    }
+    .table-content p {
+        font-size: 13px;
     }
     .break {
         display: none;
@@ -451,6 +511,12 @@
         margin-left: auto;
         margin-right: auto;
     }
+    .table-content div {
+        font-size: 14px;
+    }
+    .table-content p {
+        font-size: 14px;
+    }
     .contact-form {
         width: 60%;
     }
@@ -458,11 +524,8 @@
 
 
 @media (min-width: 2000px) {
-    
     .about-me-box {
         max-width: 10000px;
-        height: 400px;
-        width: 20%;
     }
 }
 
