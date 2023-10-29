@@ -43,7 +43,7 @@
 .about-me-box{
     text-align: center;
 
-    border: 2px solid black;
+    border: 2px solid #f7f7f7;
 }
 .about-me-flex{
     display: flex;
