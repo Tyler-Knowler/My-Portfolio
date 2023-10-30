@@ -23,6 +23,48 @@
     cursor: default;
 }
 
+.Contact-Verify {
+    z-index: 99;
+    position: fixed;
+    display: table;
+
+    text-align: center;
+
+    width: 400px;
+    height: 100px;
+}
+.Message-Content {
+    display: table-cell;
+    vertical-align: middle;
+    
+    font-family: 'Playpen Sans', cursive;
+
+}
+#Success-Message {
+    background-color: #11d100;
+    right: -400px;
+
+    transition: right .5s;
+}
+#Failed-Message {
+    background-color: #ff0000;
+    right: -400px;
+
+    transition: right .5s;
+}
+.Time-Bar {
+    position: absolute;
+    background-color: black;
+    opacity: .2;
+    
+    bottom: 0px;
+    width: 100%;
+    right: 0px;
+    height: 10px;
+
+    transition: width 5s;
+}
+
 
 #about {
     padding: 2.5%;

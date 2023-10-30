@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+
 import emailjs from '@emailjs/browser';
 
 import GithubLogo from '../img/GithubLogo.png';
@@ -14,8 +15,20 @@ const Contact = () => {
         .then((result) => {
             console.log(result.text);
             e.target.reset();
+            document.getElementById("Success-Message").style.right = "0px";
+            document.getElementById("Success-Bar").style.width = "100%";
+            setTimeout(() => {
+              document.getElementById("Success-Message").style.right = "-400px";
+            }, 5000);
+            document.getElementById("Success-Bar").style.width = "0%";
         }, (error) => {
             console.log(error.text);
+            document.getElementById("Failed-Message").style.right = "0px";
+            document.getElementById("Failed-Bar").style.width = "100%";
+            setTimeout(() => {
+              document.getElementById("Failed-Message").style.right = "-400px";
+            }, 5000);
+            document.getElementById("Failed-Bar").style.width = "0%";
         });
     };
 return (
